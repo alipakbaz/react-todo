@@ -1,0 +1,126 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: 0;
+    color: inherit;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 500;
+    color: #3C3C3D;
+    line-height: 1;
+    font-size: 1rem;
+    background-color: #fafafa;
+}
+
+h1 {
+    font-size: 1.75rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+#root, div, header, nav, section {
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    position: relative;
+}
+
+#root {
+    padding: 1rem 0;
+}
+
+@media (min-width: 576px) {
+    #root {
+        padding: 1.5rem 0.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    #root {
+        padding: 2rem 1rem;
+    }
+}
+
+@media (min-width: 992px) {
+    #root {
+        padding: 2.5rem 1.5rem;
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 1rem;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+}
+
+.d-inline-flex {
+    display: -ms-inline-flexbox !important;
+    display: inline-flex !important;
+}
+
+.d-block {
+    display: block !important;
+}
+
+.flex-row {
+    -webkit-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+.align-items-center {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-primary {
+    color: #da0d25;
+}
+
+.fill-primary {
+    fill: #da0d25;
+}
+
+.fatal-error {
+    color: #da0d25;
+    display: block;
+    padding: 2rem 0.5rem;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+}

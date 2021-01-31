@@ -1,0 +1,81 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Share a sub-list with someone - WorkFlowy</title>
+</head>
+
+<body>
+
+<div id="aa" contenteditable="true">askldjlsja</div>
+
+<hr/>
+
+<p id="sa" contenteditable="true">I that you selecting th.</p>
+<button>Select strong words</button>
+
+<hr/>
+
+<div id="id-1" contenteditable="true">Hi ! How are you doing ?</div>
+
+<hr/>
+
+<textarea id="tarea" name="tae" rows="10" cols="50"></textarea>
+
+<script>
+
+    // var el = document.getElementById('id-1');
+    // var range = document.createRange();
+    // var sel = window.getSelection();
+    //
+    // range.setStart(el.childNodes[0], 2);
+    // range.collapse(true);
+    // sel.removeAllRanges();
+    // sel.addRange(range);
+    // el.focus();
+
+
+    let button = document.querySelector('button');
+    button.addEventListener('click', function () {
+        let elem = document.getElementById('sa');
+        let selection = window.getSelection();
+        let range = document.createRange();
+        // range.selectNode(strong);
+        range.setStart(elem.childNodes[0], 5);
+        range.collapse(true);
+        selection.removeAllRanges();
+        selection.addRange(range);
+        elem.focus();
+    });
+
+    // -----------------------------------------------------------------------------------------------------------------
+
+    const ctrl = document.getElementById('aa');
+    ctrl.addEventListener('focus', () => {
+        var range, selection;
+        if (document.createRange)//Firefox, Chrome, Opera, Safari, IE 9+
+        {
+            range = document.createRange();//Create a range (a range is a like the selection but invisible)
+            range.selectNodeContents(ctrl);//Select the entire contents of the element with the range
+            range.collapse(false);//collapse the range to the end point. false means collapse to end rather than the start
+            selection = window.getSelection();//get the selection object (allows you to change selection)
+            selection.removeAllRanges();//remove any selections already made
+            selection.addRange(range);//make the range you have just created the visible selection
+        } else if (document.selection)//IE 8 and lower
+        {
+            range = document.body.createTextRange();//Create a range (a range is a like the selection but invisible)
+            range.moveToElementText(ctrl);//Select the entire contents of the element with the range
+            range.collapse(false);//collapse the range to the end point. false means collapse to end rather than the start
+            range.select();//Select the range (make it the visible selection
+        }
+    });
+
+    let tarea = document.getElementById('tarea');
+    tarea.addEventListener('keydown', e => {
+        console.log(e);
+        console.log(`Code:   ${e.code} | ${e.keyCode}`);
+    });
+
+</script>
+
+</body>
+</html>
